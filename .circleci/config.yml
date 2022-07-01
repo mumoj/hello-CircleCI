@@ -10,7 +10,7 @@ jobs:
   print-world:
     shell: /bin/sh
     environment:
-      BASH_ENV: /etc/profile
+      MY_VAR: I'm Shaka the Zulu
 
     docker:
       - image: circleci/node:13.8.0
