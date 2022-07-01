@@ -6,13 +6,19 @@ jobs:
     steps:
       - checkout
       - run: echo hello
-
+    
   print-world:
+    shell: /bin/sh
+    environment:
+      BASH_ENV: /etc/profile
+
     docker:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run: echo World !
+      - run: echo World $MY_VAR !
+    
+
 
 workflows:
    welcome:
