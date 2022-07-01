@@ -11,13 +11,14 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-     - checkout
-     - run: echo World !
+      - checkout
+      - run: echo World !
 
 workflows:
-  welcome:
+   welcome:
     jobs:
       - print-hello
       - print-world
+
         
 
