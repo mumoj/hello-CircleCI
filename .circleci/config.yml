@@ -3,11 +3,6 @@ jobs:
   print-hello:
     docker:
       - image: cimg/base:stable
-
-    branches:
-      only:
-          - main
-          
     steps:
       - checkout
       - run:
@@ -17,11 +12,6 @@ jobs:
   print-world:
     docker:
       - image: cimg/base:stable
-
-     branches:
-      only:
-          - main
-
     steps:
      - checkout
      - run: echo "World!"
@@ -31,5 +21,5 @@ workflows:
     jobs:
       - print-hello
       - print-world
-        requires: [print-world]
+        
 
