@@ -2,22 +2,20 @@ version: 2.1
 jobs:
   print-hello:
     docker:
-      - image: cimg/base:stable
+      - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run:
-          name: "Say hello"
-          command: echo "Hello"
+      - run: echo hello
 
   print-world:
     docker:
-      - image: cimg/base:stable
+      - image: circleci/node:13.8.0
     steps:
      - checkout
-     - run: echo "World!"
+     - run: echo World !
 
 workflows:
-  say-hello-workflow:
+  welcome:
     jobs:
       - print-hello
       - print-world
